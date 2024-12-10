@@ -1,0 +1,238 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery & Contacts</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('Bgrey.png');
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; 
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            width: 100%;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        /* Slideshow Styles */
+        .slideshow-container {
+            position: relative;
+            width: 80%; 
+            max-width: 1000px; 
+            margin: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; 
+        }
+
+        .slides {
+            display: none;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .slideshow-container img {
+            width: 100%;
+            height: auto; 
+            border-radius: 10px;
+        }
+
+        /* Navigation Buttons for Slideshow */
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            padding: 16px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            border-radius: 50%;
+            transform: translateY(-50%);
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Contacts Section Styles */
+        .contacts {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            margin-top: 20px;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 1000px;
+        }
+
+        .contacts h2 {
+            color: #333;
+        }
+
+        .contacts p {
+            color: #555;
+            font-size: 1.1em;
+        }
+
+        .contacts a {
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contacts a:hover {
+            color: #007bff;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Gallery & Contacts</h1>
+    </header>
+
+    <!-- Slideshow Section -->
+    <div class="slideshow-container">
+
+        <!-- Slides -->
+        <div class="slides">
+            <img src="Img1.png" alt="Image 1">
+        </div>
+
+        <div class="slides">
+            <img src="Img2.png" alt="Image 2">
+        </div>
+
+        <div class="slides">
+            <img src="Img3.png" alt="Image 3">
+        </div>
+
+        <div class="slides">
+            <img src="Img4.png" alt="Image 4">
+        </div>
+
+        <div class="slides">
+            <img src="Img5.png" alt="Image 5">
+        </div>
+
+        <div class="slides">
+            <img src="Img6.png" alt="Image 6">
+        </div>
+
+        <div class="slides">
+            <img src="Img7.png" alt="Image 7">
+        </div>
+
+        <div class="slides">
+            <img src="Img8.png" alt="Image 8">
+        </div>
+
+        <!-- Navigation Buttons -->
+        <a class="prev">&#10094;</a>
+        <a class="next">&#10095;</a>
+
+    </div>
+
+    <!-- Contacts Section -->
+    <div class="contacts">
+        <h2>Contact Me</h2>
+        <p>Email: <a href="dunomargaret@gmail.com">dunomargaret@gmail.com</a></p>
+        <p>Facebook: <a href="https://www.facebook.com/duno.margaretii?mibextid=JRoKGi."target="_blank">Margaret S. Duño</a></p>
+        <p>Contact No.: +63 951 435 1396</p>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+
+        // Show the slides
+        showSlides();
+
+        // Function to control the slideshow
+        function showSlides() {
+            let slides = document.getElementsByClassName("slides");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 3000); // Change image every 3 seconds
+        }
+
+        // Previous/Next button functionality
+        document.querySelector(".prev").addEventListener("click", function() {
+            slideIndex -= 2;
+            showSlides();
+        });
+
+        document.querySelector(".next").addEventListener("click", function() {
+            showSlides();
+        });
+    </script>
+
+</body>
+</html>
+
+    <script>
+        let slideIndex = 0;
+
+        // Show the slides
+        showSlides();
+
+        // Function to control the slideshow
+        function showSlides() {
+            let slides = document.getElementsByClassName("slides");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 3000); // Change image every 5 seconds
+        }
+
+        // Previous/Next button functionality
+        document.querySelector(".prev").addEventListener("click", function() {
+            slideIndex -= 2;
+            showSlides();
+        });
+
+        document.querySelector(".next").addEventListener("click", function() {
+            showSlides();
+        });
+    </script>
+
+</body>
+</html>
